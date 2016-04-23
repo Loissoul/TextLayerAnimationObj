@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  TextLayerAnimationObj
+//  PoemObjcShow
 //
-//  Created by Lois_pan on 16/4/23.
+//  Created by Lois_pan on 16/4/14.
 //  Copyright © 2016年 Lois_pan. All rights reserved.
 //
 

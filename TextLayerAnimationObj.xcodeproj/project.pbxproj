@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		3BC589151CCB1C580034B721 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC589141CCB1C580034B721 /* main.m */; };
 		3BC589181CCB1C580034B721 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC589171CCB1C580034B721 /* AppDelegate.m */; };
-		3BC5891B1CCB1C580034B721 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC5891A1CCB1C580034B721 /* ViewController.m */; };
 		3BC5891E1CCB1C580034B721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC5891C1CCB1C580034B721 /* Main.storyboard */; };
 		3BC589211CCB1C590034B721 /* TextLayerAnimationObj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BC5891F1CCB1C580034B721 /* TextLayerAnimationObj.xcdatamodeld */; };
 		3BC589231CCB1C590034B721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC589221CCB1C590034B721 /* Assets.xcassets */; };
 		3BC589261CCB1C590034B721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC589241CCB1C590034B721 /* LaunchScreen.storyboard */; };
 		3BC589311CCB1C590034B721 /* TextLayerAnimationObjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC589301CCB1C590034B721 /* TextLayerAnimationObjTests.m */; };
 		3BC5893C1CCB1C590034B721 /* TextLayerAnimationObjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC5893B1CCB1C590034B721 /* TextLayerAnimationObjUITests.m */; };
+		3BC589501CCB1CA30034B721 /* AnimationShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC5894C1CCB1CA30034B721 /* AnimationShow.m */; };
+		3BC589511CCB1CA30034B721 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC5894F1CCB1CA30034B721 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,6 @@
 		3BC589141CCB1C580034B721 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BC589161CCB1C580034B721 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3BC589171CCB1C580034B721 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3BC589191CCB1C580034B721 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3BC5891A1CCB1C580034B721 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3BC5891D1CCB1C580034B721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BC589201CCB1C580034B721 /* TextLayerAnimationObj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TextLayerAnimationObj.xcdatamodel; sourceTree = "<group>"; };
 		3BC589221CCB1C590034B721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +52,10 @@
 		3BC589371CCB1C590034B721 /* TextLayerAnimationObjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextLayerAnimationObjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC5893B1CCB1C590034B721 /* TextLayerAnimationObjUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextLayerAnimationObjUITests.m; sourceTree = "<group>"; };
 		3BC5893D1CCB1C590034B721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC5894B1CCB1CA30034B721 /* AnimationShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationShow.h; sourceTree = "<group>"; };
+		3BC5894C1CCB1CA30034B721 /* AnimationShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationShow.m; sourceTree = "<group>"; };
+		3BC5894E1CCB1CA30034B721 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3BC5894F1CCB1CA30034B721 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +108,9 @@
 			children = (
 				3BC589161CCB1C580034B721 /* AppDelegate.h */,
 				3BC589171CCB1C580034B721 /* AppDelegate.m */,
-				3BC589191CCB1C580034B721 /* ViewController.h */,
-				3BC5891A1CCB1C580034B721 /* ViewController.m */,
-				3BC5891C1CCB1C580034B721 /* Main.storyboard */,
-				3BC589221CCB1C590034B721 /* Assets.xcassets */,
-				3BC589241CCB1C590034B721 /* LaunchScreen.storyboard */,
-				3BC589271CCB1C590034B721 /* Info.plist */,
-				3BC5891F1CCB1C580034B721 /* TextLayerAnimationObj.xcdatamodeld */,
+				3BC589491CCB1CA30034B721 /* Model */,
+				3BC5894A1CCB1CA30034B721 /* View */,
+				3BC5894D1CCB1CA30034B721 /* ViewController */,
 				3BC589131CCB1C580034B721 /* Supporting Files */,
 			);
 			path = TextLayerAnimationObj;
@@ -120,6 +119,11 @@
 		3BC589131CCB1C580034B721 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BC5891C1CCB1C580034B721 /* Main.storyboard */,
+				3BC589221CCB1C590034B721 /* Assets.xcassets */,
+				3BC589241CCB1C590034B721 /* LaunchScreen.storyboard */,
+				3BC589271CCB1C590034B721 /* Info.plist */,
+				3BC5891F1CCB1C580034B721 /* TextLayerAnimationObj.xcdatamodeld */,
 				3BC589141CCB1C580034B721 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +145,31 @@
 				3BC5893D1CCB1C590034B721 /* Info.plist */,
 			);
 			path = TextLayerAnimationObjUITests;
+			sourceTree = "<group>";
+		};
+		3BC589491CCB1CA30034B721 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3BC5894A1CCB1CA30034B721 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3BC5894B1CCB1CA30034B721 /* AnimationShow.h */,
+				3BC5894C1CCB1CA30034B721 /* AnimationShow.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3BC5894D1CCB1CA30034B721 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3BC5894E1CCB1CA30034B721 /* ViewController.h */,
+				3BC5894F1CCB1CA30034B721 /* ViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,10 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC5891B1CCB1C580034B721 /* ViewController.m in Sources */,
 				3BC589181CCB1C580034B721 /* AppDelegate.m in Sources */,
 				3BC589151CCB1C580034B721 /* main.m in Sources */,
 				3BC589211CCB1C590034B721 /* TextLayerAnimationObj.xcdatamodeld in Sources */,
+				3BC589501CCB1CA30034B721 /* AnimationShow.m in Sources */,
+				3BC589511CCB1CA30034B721 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
