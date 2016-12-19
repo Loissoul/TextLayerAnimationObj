@@ -11,9 +11,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
 
-@interface AnimationShow : NSObject
+@interface PGQAnimationShow : NSObject
 
-+ (AnimationShow *)shareInstance;
++ (PGQAnimationShow *)shareInstance;
 
 - (void)showWithMessage:(NSString *)messgae
                   image:(UIImage *)image

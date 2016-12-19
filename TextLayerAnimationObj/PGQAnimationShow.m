@@ -6,11 +6,11 @@
 //  Copyright © 2016年 Lois_pan. All rights reserved.
 //
 
-#import "AnimationShow.h"
+#import "PGQAnimationShow.h"
 
 #define  windowY   40
 
-@interface AnimationShow()
+@interface PGQAnimationShow()
 
 //window背景
 @property (nonatomic, strong) UIWindow * window;
@@ -27,19 +27,17 @@
 
 @end
 
-@implementation AnimationShow
+@implementation PGQAnimationShow
 
-+ (AnimationShow *)shareInstance
-{
-    static  AnimationShow * sharemanager = nil;
++ (PGQAnimationShow *)shareInstance {
+    static  PGQAnimationShow * sharemanager = nil;
     if (sharemanager == nil){
-        sharemanager = [[AnimationShow alloc]init];
+        sharemanager = [[PGQAnimationShow alloc]init];
     }
     return sharemanager;
 }
 
-- (void)showWithMessage:(NSString *)messgae image:(UIImage *)image windowColor:(UIColor *)color
-{
+- (void)showWithMessage:(NSString *)messgae image:(UIImage *)image windowColor:(UIColor *)color {
     _gradientLayer = [[CAGradientLayer alloc] init];
     _pathLayer = [[CAShapeLayer alloc] init];
     _textAnimationTime = 2.0;
@@ -55,15 +53,13 @@
 }
 
 //Sucess
-- (void)showSucessWithMessage:(NSString *)message backColor:(UIColor *)color
-{
+- (void)showSucessWithMessage:(NSString *)message backColor:(UIColor *)color {
     UIImage * image = [UIImage imageNamed:@""];
     [self showWithMessage:@"download sucessful" image:image windowColor:color];
 }
 
 //Loading
-- (void)showLoadingWithMessage:(NSString *)message backColor:(UIColor *)color
-{
+- (void)showLoadingWithMessage:(NSString *)message backColor:(UIColor *)color {
     [self showWithMessage:@"Loading" image:nil windowColor:color];
     [_timer invalidate];
     
@@ -75,8 +71,7 @@
     [_window addSubview:activityIndicatorView];
 }
 
-- (void)showWindowWithColor:(UIColor *)color
-{
+- (void)showWindowWithColor:(UIColor *)color {
     [_timer invalidate];
     _timer = nil;
     _window = [[UIWindow alloc] init];
@@ -85,7 +80,7 @@
     _window.backgroundColor = color;
     [self.window makeKeyAndVisible];
     
-    _window.frame   = CGRectMake(0, -windowY,[UIScreen mainScreen].bounds.size.width, windowY);
+    _window.frame   = CGRectMake(0, -windowY, [UIScreen mainScreen].bounds.size.width, windowY);
     
     [UIView animateWithDuration:_windowTime animations:^{
         _window.frame = CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, windowY);
@@ -93,14 +88,13 @@
     _timer = [NSTimer scheduledTimerWithTimeInterval:_textAnimationTime+1 target:self selector:@selector(hide) userInfo:nil repeats:NO];
 }
 
-//讲window 隐藏起来
-- (void)hide
-{
+//window hide
+- (void)hide {
     [_timer invalidate];
     _timer = nil;
     if (_window) {
         [UIView animateWithDuration:_windowTime animations:^{
-            _window.frame = CGRectMake(0, -windowY,[UIScreen mainScreen].bounds.size.width, windowY);
+            _window.frame = CGRectMake(0, -windowY, [UIScreen mainScreen].bounds.size.width, windowY);
         } completion:^(BOOL finished) {
             _window = nil;
             [_pathLayer removeAllAnimations];
@@ -109,17 +103,13 @@
     }
 }
 
-//添加GradientLayer
-- (void)addGradientLayer
-{
+//Add GradientLayer
+- (void)addGradientLayer {
     int count = 10;
     NSMutableArray * colors = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < count; i++) {
-//        UIColor * color = [[UIColor alloc] initWithRed:(arc4random() % 256) / 255 green:(arc4random() % 256) / 255 blue:(arc4random() % 256) / 255 alpha:1.0];
-        UIColor * color = [UIColor colorWithRed:(200/255.0) green:(200/255.0) blue:(91/255.0) alpha:1.0];
-        
-        NSLog(@"%@",color);
+        UIColor * color = [UIColor colorWithRed:((200-10*i)/255.0) green:((200-10*i)/255.0) blue:((91-10*i)/255.0) alpha:1.0];
         [colors addObject:(id _Nonnull)color.CGColor];
     }
     
@@ -137,12 +127,9 @@
     
     NSMutableArray * toColors = [[NSMutableArray alloc] init];
     
-    
-    NSLog(@"%d",arc4random()%4);
     for (int i = 0; i < count; i++) {
         
-//        UIColor * color = [[UIColor alloc] initWithRed:(arc4random() % 256) / 255 green:(arc4random() % 256) / 255 blue:(arc4random() % 256) / 255 alpha:1.0];
-        UIColor * color = [UIColor colorWithRed:(24/255.0) green:(24/255.0) blue:(24/255.0) alpha:1.0];
+        UIColor * color = [UIColor colorWithRed:((24-2*i)/255.0) green:((24-2*i)/255.0) blue:((24-2*i)/255.0) alpha:1.0];
         [toColors addObject:(id _Nonnull)color.CGColor];
     }
     
@@ -153,8 +140,7 @@
 
 
 //添加pathlayer
-- (void)addPathLayerWithMessage:(NSString *)message
-{
+- (void)addPathLayerWithMessage:(NSString *)message {
     UIBezierPath *textPath = [self bezierPathFrom:message];
     _pathLayer.bounds = CGPathGetBoundingBox(textPath.CGPath);
     _pathLayer.position = _gradientLayer.position;
@@ -168,14 +154,13 @@
     textAnimation.duration = _textAnimationTime;
     textAnimation.fromValue = [NSNumber numberWithFloat:0];
     textAnimation.toValue = [NSNumber numberWithFloat:1];
-    textAnimation.delegate = _window;
+//    textAnimation.delegate = _window;
     
     [_pathLayer addAnimation:textAnimation forKey:@"strokeEnd"];
 }
 
 //绘制bezierPath
-- (UIBezierPath *)bezierPathFrom:(NSString *)string
-{
+- (UIBezierPath *)bezierPathFrom:(NSString *)string {
     CGMutablePathRef letters = CGPathCreateMutable();
     
     CTFontRef font = CTFontCreateWithName(CFSTR("SnellRoundhand"), 18.0f, NULL);
@@ -187,23 +172,21 @@
     CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)attrString);
     CFArrayRef runArray = CTLineGetGlyphRuns(line);
     
-    // for each RUN
-    for (CFIndex runIndex = 0; runIndex < CFArrayGetCount(runArray); runIndex++)
-    {
-        // Get FONT for this run
+    // for each run
+    for (CFIndex runIndex = 0; runIndex < CFArrayGetCount(runArray); runIndex++) {
+        // Get Font for this run
         CTRunRef run = (CTRunRef)CFArrayGetValueAtIndex(runArray, runIndex);
         CTFontRef runFont = CFDictionaryGetValue(CTRunGetAttributes(run), kCTFontAttributeName);
         
-        // for each GLYPH in run
-        for (CFIndex runGlyphIndex = 0; runGlyphIndex < CTRunGetGlyphCount(run); runGlyphIndex++)
-        {
+        // for each GLyph in run
+        for (CFIndex runGlyphIndex = 0; runGlyphIndex < CTRunGetGlyphCount(run); runGlyphIndex++) {
             // get Glyph & Glyph-data
             CFRange thisGlyphRange = CFRangeMake(runGlyphIndex, 1);
             CGGlyph glyph;
             CGPoint position;
             CTRunGetGlyphs(run, thisGlyphRange, &glyph);
             CTRunGetPositions(run, thisGlyphRange, &position);
-            // Get PATH of outline
+            // Get path of outline
             {
                 CGPathRef letter = CTFontCreatePathForGlyph(runFont, glyph, NULL);
                 CGAffineTransform t = CGAffineTransformMakeTranslation(position.x, position.y);

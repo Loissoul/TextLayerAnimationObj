@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "AnimationShow.h"
+#import "PGQAnimationShow.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UIButton * button;
@@ -31,13 +31,13 @@
     
     NSLog(@"heheda");
     
-    [[AnimationShow shareInstance]showWithMessage:@"heheh" image:nil windowColor:[UIColor yellowColor]];
-    
+    [[PGQAnimationShow shareInstance]showWithMessage:@"Hello World" image:nil windowColor:[UIColor yellowColor]];
 }
 
 - (UIButton *)button{
     if (!_button) {
         _button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+        [_button setTitle:@"Click Me" forState:UIControlStateNormal];
         _button.backgroundColor = [UIColor purpleColor];
         [_button addTarget:self action:@selector(showWindow) forControlEvents:UIControlEventTouchUpInside];
     }
